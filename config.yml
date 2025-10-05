@@ -1,0 +1,18 @@
+runtime:
+  mode: test                  # runtime mode (train, test)
+  tlights_ignore: true        # whether to ignore traffic lights (Bool)
+  vehicle_model: vehicle.mustang.mustang        # blueprint of the ego vehicle # vehicle.tesla.model3
+  spectate: top_down          # spectator camera mode (top_down, pov)
+  epochs: 3                    # number of epochs for training/testing
+
+  # input model for evaluation or training, is created automatically if not exists.
+  # uses torch.save() and torch.load() to save and load models.
+  # all models are stored in /data/models/ directory, postfixed by ".pth"
+  model_name: base_mustang
+
+  # output dir for sessions summaries
+  output_dir: /data/output
+
+server:
+  host: localhost             # carla server host
+  port: 2000                  # carla server port
